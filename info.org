@@ -1,0 +1,13 @@
+* Config Info
+
+** Files
+- /etc/X11/xorg.conf.d/00-keyboard.conf
+  may also be 10-keyboard.conf
+- ~/.xmonad/xmonad.hs
+  XMonad config
+
+** Additional Steps
+- add "xmonad --replace" to Xfce4 autostart
+
+** Notes
+xmodmap -e "remove Mod4 = Hyper_L" -e "add Mod3 = Hyper_L"
