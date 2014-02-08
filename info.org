@@ -1,6 +1,7 @@
 * Config Info
 
 ** Programms to install
+- rxvt-unicode
 - xmonad
 - Kupfer/Synapse
 - clearlooks-phenix
@@ -10,10 +11,17 @@
   may also be 10-keyboard.conf
 - ~/.xmonad/xmonad.hs
   XMonad config
+- ~/.Xresources
 
 ** Additional Steps
+
+*** Functionality
 - add "xmonad --replace" to Xfce4 autostart
 - add Kupfer or Synapse to autostart
+
+*** Looks
+- select Clearlooks-Phenix theme
+- select Liberation Sans font
 
 ** Notes
 xmodmap -e "remove Mod4 = Hyper_L" -e "add Mod3 = Hyper_L"
