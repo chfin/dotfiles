@@ -1,32 +1,18 @@
--- default desktop configuration for Fedora
-
-import System.Posix.Env (getEnv)
-import Data.Maybe (maybe)
-
 import XMonad
---import XMonad.Config.Desktop
---import XMonad.Config.Gnome
---import XMonad.Config.Kde
 import XMonad.Config.Xfce
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageDocks
+import XMonad.Layout.NoBorders
 
 main = do
-     xmonad $ xfceConfig
-     	    { terminal = "urxvt"
-    	    , modMask  = mod3Mask
-	    , startupHook = startup
-    	    }
+     xmonad $ ewmh xfceConfig
+		   { terminal = "urxvt"
+    	    	   , modMask  = mod3Mask
+	    	   , startupHook = startup
+	    	   , handleEventHook = handleEventHook xfceConfig <+> fullscreenEventHook
+		   , layoutHook=avoidStruts $ smartBorders $ layoutHook xfceConfig
+    	    	   }
 
 startup :: X()
 startup = do
 	spawn "xmodmap -e \"remove Mod4 = Hyper_L\" -e \"add Mod3 = Hyper_L\""
-
---main = do
---     session <- getEnv "DESKTOP_SESSION"
---     xmonad  $ maybe desktopConfig desktop session
-
---desktop "gnome" = gnomeConfig
---desktop "kde" = kde4Config
---desktop "xfce" = xfceConfig
-
---desktop "xmonad-mate" = gnomeConfig
---desktop _ = desktopConfig
