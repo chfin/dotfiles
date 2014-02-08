@@ -1,27 +1,28 @@
 * Config Info
 
-** Programms to install
+** packages to install
 - rxvt-unicode
 - xmonad
 - Kupfer/Synapse
 - clearlooks-phenix
 
-** Files
+** configuration files
 - /etc/X11/xorg.conf.d/00-keyboard.conf
   may also be 10-keyboard.conf
 - ~/.xmonad/xmonad.hs
   XMonad config
 - ~/.Xresources
 
-** Additional Steps
+** additional steps
 
-*** Functionality
+*** functionality
 - add "xmonad --replace" to Xfce4 autostart
 - add Kupfer or Synapse to autostart
 
-*** Looks
+*** looks
 - select Clearlooks-Phenix theme
 - select Liberation Sans font
 
-** Notes
-xmodmap -e "remove Mod4 = Hyper_L" -e "add Mod3 = Hyper_L"
+** notes
+- xmodmap -e "remove Mod4 = Hyper_L" -e "add Mod3 = Hyper_L"
+  - also in Xfce settings for attaching a USB keyboard ("Wechseldatenträger" > "Eingabegeräte")
