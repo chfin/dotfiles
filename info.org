@@ -14,6 +14,7 @@
 - ~/.Xresources
 - /usr/share/X11/xkb/symbols/capslock
   (apply changes from capslock.diff)
+- ~/.zshrc
 
 ** additional steps
 
