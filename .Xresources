@@ -1,6 +1,7 @@
 URxvt.scrollstyle: plain
 URxvt.font: xft:monospace:size=9
-!URxvt.letterSpace: 0
+URxvt.letterSpace: -1
+
 ! black
 URxvt.color0  : #000000
 URxvt.color8  : #555555

@@ -24,6 +24,7 @@
 *** looks
 - select Clearlooks-Phenix theme
 - select Liberation Sans font
+- select slight hinting, subpixel blabla
 
 ** notes
 - xmodmap -e "remove Mod4 = Hyper_L" -e "add Mod3 = Hyper_L"
