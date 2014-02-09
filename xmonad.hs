@@ -15,4 +15,5 @@ main = do
 
 startup :: X()
 startup = do
-	spawn "xmodmap -e \"remove Mod4 = Hyper_L\" -e \"add Mod3 = Hyper_L\""
+--	spawn "xmodmap -e \"remove Mod4 = Hyper_L\" -e \"add Mod3 = Hyper_L\""
+	spawn "xrdb -merge ~/.Xresources"

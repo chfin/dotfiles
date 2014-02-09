@@ -12,6 +12,8 @@
 - ~/.xmonad/xmonad.hs
   XMonad config
 - ~/.Xresources
+- /usr/share/X11/xkb/symbols/capslock
+  (apply changes from capslock.diff)
 
 ** additional steps
 
@@ -26,3 +28,4 @@
 ** notes
 - xmodmap -e "remove Mod4 = Hyper_L" -e "add Mod3 = Hyper_L"
   - also in Xfce settings for attaching a USB keyboard ("Wechseldatenträger" > "Eingabegeräte")
+  - not necessary with capslock.diff

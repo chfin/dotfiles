@@ -1,0 +1,6 @@
+50,51c50,51
+<     key <CAPS> { [ Hyper_L ] };
+<     modifier_map Mod4 { <CAPS> };
+---
+>     key <CAPS> { [ Hyper_L, Hyper_L, Hyper_L, Hyper_L ] };
+>     modifier_map Mod3 { <CAPS> };
