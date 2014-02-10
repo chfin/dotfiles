@@ -23,7 +23,7 @@
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
 
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(autoload 'my-enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 
 (defvar electrify-return-match
   "[\]}\)\"]"
@@ -42,7 +42,34 @@
 
 (defun my-enable-paredit-mode ()
   (paredit-mode t)
-  (local-set-key (kbd "RET") 'electrify-return-if-match)
+  ;(local-set-key (kbd "<M-right>") 'paredit-forward-slurp-sexp)
+  ;(local-set-key (kbd "<M-left>") 'paredit-forward-barf-sexp)
+  ;(local-set-key (kbd "<C-right>") 'right-word)
+  ;(local-set-key (kbd "<C-left>") 'left-word)
+  ;(local-set-key (kbd "RET") 'electrify-return-if-match)
+  (setq paredit-commands
+	(remove-duplicates
+	 (append 
+	  '((("C-)" "M-<right>")
+	     paredit-forward-slurp-sexp
+	     ("(foo (bar |baz) quux zot)"
+	      "(foo (bar |baz quux) zot)")
+	     ("(a b ((c| d)) e f)"
+	      "(a b ((c| d) e) f)"))
+	    (("C-}" "M-<left>")
+	     paredit-forward-barf-sexp
+	     ("(foo (bar |baz quux) zot)"
+	      "(foo (bar |baz) quux zot)"))
+	    (("C-<right>")
+	     right-word)
+	    (("C-<left>")
+	     left-word)
+	    (("RET")
+	     electrify-return-if-match ())))
+	 :test 'equal))
+  (paredit-define-keys)
+  ;;(paredit-annotate-mode-with-examples)
+  ;;(paredit-annotate-functions-with-examples)
   (show-paren-mode t))
 
 (add-hook 'emacs-lisp-mode-hook       #'my-enable-paredit-mode)
