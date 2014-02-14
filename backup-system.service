@@ -1,0 +1,15 @@
+[Unit]
+Description=System Backup Service
+Requires=mount-backup@system.service
+After=mount-backup@system.service
+
+[Service]
+Type=oneshot
+#Environment=DISPLAY=:0.0
+#Environment=XAUTHORITY=/home/chfin/.Xauthority
+#DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/chfin/dbus/user_bus_socket
+#ExecStart=/home/chfin/dateien/setup/backup2.sh "pkexec --disable-internal-agent deja-dup --backup" "System files"
+ExecStart=/bin/sh -c '/home/chfin/.backup/backup_system.sh &>> /var/log/duplicity/backup.log'
+
+[Install]
+WantedBy=timer-weekly.target

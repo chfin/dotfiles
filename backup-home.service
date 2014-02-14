@@ -1,0 +1,13 @@
+[Unit]
+Description=Home Backup Service
+Requires=mount-backup@home.service
+After=mount-backup@home.service
+
+[Service]
+User=chfin
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/deja-dup --backup
+
+[Install]
+WantedBy=timer-daily.target

@@ -1,0 +1,9 @@
+#!/bin/sh
+export PASSPHRASE="<password>"
+DEST=file:///mnt/backup/etc
+SRC=/etc
+
+duplicity --full-if-older-than 1M $SRC $DEST
+duplicity remove-older-than 1Y --force $DEST
+duplicity verify $DEST $SRC
+unset PASSPHRASE

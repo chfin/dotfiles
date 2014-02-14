@@ -1,0 +1,8 @@
+[Unit]
+Description=Mount Backup Partition
+
+[Service]
+Type=oneshot
+User=chfin
+Environment=DISPLAY=:0
+ExecStart=/home/chfin/.backup/mount_backup.sh "%i"
