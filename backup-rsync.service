@@ -9,5 +9,5 @@ Type=oneshot
 Environment=DISPLAY=:0
 ExecStart=/home/chfin/.backup/rsync_home.sh
 
-[Install]
-WantedBy=timer-daily.target
+#[Install]
+#WantedBy=timer-daily.target

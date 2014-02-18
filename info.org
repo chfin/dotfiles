@@ -42,6 +42,7 @@
 *** files
 - /etc/systemd/system/backup-home.service
 - /etc/systemd/system/backup-system.service
+- /etc/systemd/system/backup-rsync.service
 - /etc/systemd/system/mount-backup@.service
 - ~/.backup/mount_backup.sh
 - ~/.backup/backup_system.sh
@@ -52,5 +53,6 @@
 - *change password in backup_system.sh*
 - sed UUID mountpoint in /etc/fstab for mount device to /mnt/backup
 - setup deja-dup to backup home w/o rsync directories
-- setup systemd cron functionality (at least day and week)
-- enable services
+  // - setup systemd cron functionality (at least day and week)
+- place scripts in /etc/cron.daily and /etc/cron.weekly to start the backup services
+- enable crond service

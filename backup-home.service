@@ -9,5 +9,5 @@ Type=oneshot
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/deja-dup --backup
 
-[Install]
-WantedBy=timer-daily.target
+#[Install]
+#WantedBy=timer-daily.target

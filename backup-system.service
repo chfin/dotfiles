@@ -11,5 +11,5 @@ Type=oneshot
 #ExecStart=/home/chfin/dateien/setup/backup2.sh "pkexec --disable-internal-agent deja-dup --backup" "System files"
 ExecStart=/bin/sh -c '/home/chfin/.backup/backup_system.sh &>> /var/log/duplicity/backup.log'
 
-[Install]
-WantedBy=timer-weekly.target
+#[Install]
+#WantedBy=timer-weekly.target
