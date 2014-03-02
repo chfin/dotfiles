@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Standby
+GenericName=Power Management
+Comment=Computer in den Standby-Modus versetzen
+Exec=systemctl suspend
+Icon=xfpm-suspend
+Type=Application
+Terminal=false
+Categories=System
+#StartupWMClass=Emacs

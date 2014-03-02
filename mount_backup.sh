@@ -1,8 +1,8 @@
 #!/bin/sh
 
 ## sleep 10 minutes
-#sleepTime=600
-sleepTime=5
+sleepTime=600
+#sleepTime=5
 
 ## parameter
 kind="$1"
@@ -72,7 +72,7 @@ requireMount () {
 #	    delay=askDelay
 #	    return 1
 #	fi
-	pmount UUID=37f594de-c5a2-45ab-96e0-765f805edce1
+	mount UUID=37f594de-c5a2-45ab-96e0-765f805edce1
 	first=false
     done
     return 0
@@ -82,13 +82,13 @@ while ! requireMount; do
     if $delay; then
 	sleep $sleepTime
     else
-	zenity --info \
+	yad --info \
 	    --text "Backup cancelled" \
 	    --title "Backup"
 	exit 1
     fi
 done
 
-zenity --info \
+yad --info \
     --text "Starting backup: ${kind}. Please do not disconnect your backup drive." \
     --title "Backup ${kind}"

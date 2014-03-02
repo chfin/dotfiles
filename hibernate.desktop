@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ruhezustand
+GenericName=Power Management
+Comment=Computer in den Ruhezustand versetzen
+Exec=systemctl hibernate
+Icon=xfpm-hibernate
+Type=Application
+Terminal=false
+Categories=System
+#StartupWMClass=Emacs
