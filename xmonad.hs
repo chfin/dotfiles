@@ -5,6 +5,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.ManageHelpers
+import XMonad.Util.EZConfig
 
 main = do
      xmonad $ ewmh xfceConfig
@@ -19,7 +20,8 @@ main = do
 myManageHooks = composeAll
 --	   [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
            [ isFullscreen --> doFullFloat
-           , resource =? "synapse" --> doIgnore    
+           , resource =? "synapse" --> doIgnore
+           , className =? "backup" --> doFloat
 	   ]
 
 startup :: X()

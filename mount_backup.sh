@@ -22,6 +22,7 @@ askMount () {
     fi
 
     yad --title "Backup (${kind})" \
+	--class="backup" \
 	--text "$text" \
 	--button="Remind me later (10 minutes):1" \
 	--button="Cancel Backup:2" \
@@ -83,6 +84,7 @@ while ! requireMount; do
 	sleep $sleepTime
     else
 	yad --info \
+            --class="backup" \
 	    --text "Backup cancelled" \
 	    --title "Backup"
 	exit 1
@@ -90,5 +92,6 @@ while ! requireMount; do
 done
 
 yad --info \
+    --class="backup" \
     --text "Starting backup: ${kind}. Please do not disconnect your backup drive." \
     --title "Backup ${kind}"

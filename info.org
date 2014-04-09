@@ -55,4 +55,6 @@
 - setup deja-dup to backup home w/o rsync directories
   // - setup systemd cron functionality (at least day and week)
 - place scripts in /etc/cron.daily and /etc/cron.weekly to start the backup services
+  - *Important*: the scripts' file names must not contain dots!
 - enable crond service
+  - *Important*: to properly run anacron on laptops, comment the battery section in /etc/cron.hourly/0anacron
