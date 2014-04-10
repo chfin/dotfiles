@@ -1,0 +1,10 @@
+[Unit]
+Description=Show Backup icon
+StopWhenUnneeded=true
+
+[Service]
+Type=simple
+User=chfin
+Environment=DISPLAY=:0
+ExecStart=/home/chfin/.backup/icon_backup.sh "%i"
+ExecStopPost=/usr/bin/notify-send -i deja-dup "%i" "Backup finished"

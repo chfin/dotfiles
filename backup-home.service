@@ -1,7 +1,7 @@
 [Unit]
 Description=Home Backup Service
-Requires=mount-backup@home.service
-After=mount-backup@home.service
+Requires=mount-backup@home.service icon-backup@home.service
+After=mount-backup@home.service icon-backup@home.service
 
 [Service]
 User=chfin

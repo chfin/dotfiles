@@ -1,5 +1,6 @@
 [Unit]
 Description=Mount Backup Partition
+StopWhenUnneeded=true
 
 [Service]
 Type=oneshot

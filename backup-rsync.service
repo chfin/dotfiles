@@ -1,7 +1,7 @@
 [Unit]
 Description=Home Backup Service
-Requires=mount-backup@rsync.service
-After=mount-backup@rsync.service
+Requires=mount-backup@rsync.service icon-backup@rsync.service
+After=mount-backup@rsync.service icon-backup@rsync.service
 
 [Service]
 User=chfin
