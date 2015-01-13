@@ -8,7 +8,7 @@ sleepTime=600
 kind="$1"
 
 testMounted () {
-    systemctl is-active mnt-backup.mount > /dev/null
+    systemctl is-active mnt-nfs_storage.mount > /dev/null
     return $?
 }
 
@@ -73,7 +73,8 @@ requireMount () {
 #	    delay=askDelay
 #	    return 1
 #	fi
-	mount UUID=37f594de-c5a2-45ab-96e0-765f805edce1
+	#mount UUID=37f594de-c5a2-45ab-96e0-765f805edce1
+	mount /mnt/nfs_storage
 	first=false
     done
     return 0
@@ -91,7 +92,7 @@ while ! requireMount; do
     fi
 done
 
-yad --info \
-    --class="backup" \
-    --text "Starting backup: ${kind}. Please do not disconnect your backup drive." \
-    --title "Backup ${kind}"
+#yad --info \
+#    --class="backup" \
+#    --text "Starting backup: ${kind}. Please do not disconnect your backup drive." \
+#    --title "Backup ${kind}"
