@@ -1,5 +1,5 @@
 #!/bin/sh
-export PASSPHRASE="<passphrase>"
+export PASSPHRASE="<password>"
 #DEST=file:///mnt/backup/etc
 DEST=file:///mnt/nfs_backup/etc
 SRC=/etc
