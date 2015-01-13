@@ -68,6 +68,30 @@
 ;;;; general editing tools ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;; yasnippet
+;;;;;;;;;;;;;
+
+(require 'yasnippet)
+(setq yas-snippet-dirs (append yas-snippet-dirs
+                               '("~/.emacs.d/my-snippets")))
+(yas-reload-all)
+
+;;keys for actication
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "M-TAB") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "M-<tab>") 'yas-expand)
+
+;;keys for navigation
+(define-key yas-keymap [(tab)]       nil)
+(define-key yas-keymap (kbd "TAB")   nil)
+(define-key yas-keymap [(shift tab)] nil)
+(define-key yas-keymap [backtab]     nil)
+(define-key yas-keymap (kbd "M-<tab>") 'yas-next-field-or-maybe-expand)
+(define-key yas-keymap (kbd "M-S-<tab>") 'yas-prev)
+
+(yas-global-mode 1)
+
 ;;; autocomplete
 ;;;;;;;;;;;;;;;;
 
