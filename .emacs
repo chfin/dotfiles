@@ -9,10 +9,15 @@
 ;;;;;;;;;;;;;;;;;;
 
 (require 'package)
+
 (add-to-list 'package-archives 
     '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives 
     '("MELPA" . "http://melpa.milkbox.net/packages/"))
+;; for elpy
+(add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+
 (package-initialize)
 
 ;;; packages I use:
@@ -66,7 +71,7 @@
 ;;; autocomplete
 ;;;;;;;;;;;;;;;;
 
-;(require 'auto-complete)
+(require 'auto-complete)
 ;;(global-auto-complete-mode t)
 ;;(auto-complete-mode t)
 
@@ -154,11 +159,10 @@
 ;;; ac-slime
 ;;;;;;;;;;;;
 
-(require 'ac-slime)
 (defun my-set-up-slime-ac ()
-  ;; enable fuzzy completion (t)
-  (set-up-slime-ac t)
-  ;;(set-up-slime-ac)
+  (auto-complete-mode t)
+  (set-up-slime-ac t) ; enable fuzzy completion (t)
+  ;;(set-up-slime-ac) ; no fuzzy completion
   (delete 'ac-source-words-in-same-mode-buffers ac-sources))
 
 ;;(add-hook 'slime-mode-hook 'set-up-slime-ac)
@@ -191,7 +195,16 @@
 ;;;; python ;;;;
 ;;;;;;;;;;;;;;;;
 
-;;(elpy-enable)
+(elpy-enable)
+
+;;;;;;;;;;;;;;;
+;;;; latex ;;;;
+;;;;;;;;;;;;;;;
+
+(defun my-ac-auctex-startup ()
+  (auto-complete-mode t)
+  (require 'auto-complete-auctex))
+(add-hook 'LaTeX-mode-hook 'my-ac-auctex-startup)
 
 ;;;;;;;;;;;;;;;;;;;
 ;;;; variables ;;;;
