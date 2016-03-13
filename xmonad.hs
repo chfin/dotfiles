@@ -23,8 +23,9 @@ main = do
 myManageHooks = composeAll
 --	   [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
            [ isFullscreen --> doFullFloat
-           , resource =? "synapse" --> doIgnore
+           , appName =? "synapse" --> doIgnore
            , className =? "backup" --> doFloat
+           , appName =? "xfce4-notifyd" --> doIgnore
 	   ]
 
 startup :: X()
