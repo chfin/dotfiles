@@ -26,3 +26,11 @@ URxvt.color14 : #55FFFF
 ! white
 URxvt.color7  : #AAAAAA
 URxvt.color15 : #FFFFFF
+
+urxvt*termName: rxvt-256color
+
+Xft.Hinting   : 1
+Xft.RGBA      : "rgb"
+Xft.HintStyle : "hintslight"
+Xft.Antialias : 1
+!Xft.dpi       : 131
