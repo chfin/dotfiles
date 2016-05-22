@@ -8,6 +8,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig
 import qualified Data.Map as M
 import System.Exit
+import XMonad.Actions.CycleWS
 
 main = do
      xmonad $ ewmh xfceConfig
@@ -24,6 +25,7 @@ myManageHooks = composeAll
 --	   [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
            [ isFullscreen --> doFullFloat
            , appName =? "synapse" --> doIgnore
+           --, appName =? "albert" --> doIgnore
            , className =? "backup" --> doFloat
            , appName =? "xfce4-notifyd" --> doIgnore
 	   ]
@@ -74,6 +76,17 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- quit, or restart
     , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess)) -- %! Quit xmonad
     , ((modMask              , xK_q     ), spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi") -- %! Restart xmonad
+
+    -- cycle workspaces
+    , ((modMask              , xK_Left  ), prevWS)
+    , ((modMask              , xK_Right ), nextWS)
+    , ((modMask .|. shiftMask, xK_Left  ), shiftToPrev >> prevWS)
+    , ((modMask .|. shiftMask, xK_Right ), shiftToNext >> nextWS)
+    , ((modMask              , xK_Down  ), nextScreen)
+    , ((modMask              , xK_Up    ), prevScreen)
+    , ((modMask .|. shiftMask, xK_Down  ), shiftNextScreen)
+    , ((modMask .|. shiftMask, xK_Up    ), shiftPrevScreen)
+    , ((modMask              , xK_a     ), toggleWS)
 
 --    , ((modMask .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -")) -- %! Run xmessage with a summary of the default keybindings (useful for beginners)
     -- repeat the binding for non-American layout keyboards

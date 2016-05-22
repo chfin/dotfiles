@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Xmonad Xfce
+Comment=Lightweight X11 tiled window manager written in Haskell (running with xfce)
+Exec=xmonad-xfce
+Icon=xmonad
+Terminal=false
+StartupNotify=false
+Categories=Application;
+DesktopNames=XFCE
