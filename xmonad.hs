@@ -9,17 +9,24 @@ import XMonad.Util.EZConfig
 import qualified Data.Map as M
 import System.Exit
 import XMonad.Actions.CycleWS
+import XMonad.Layout.Circle
+import XMonad.Layout.Dwindle as LDw
+import XMonad.Layout.Grid
+import XMonad.Hooks.DynamicLog
 
 main = do
-     xmonad $ ewmh xfceConfig
+     xmonad $ docks $ ewmh xfceConfig
 		   { terminal = "urxvt"
     	    	   , modMask  = mod3Mask
 	    	   , startupHook = startup
 	    	   , handleEventHook = handleEventHook xfceConfig <+> fullscreenEventHook
-		   , layoutHook=avoidStruts $ smartBorders $ layoutHook xfceConfig
+		   , layoutHook = avoidStruts $ smartBorders $ myLayout
 		   , manageHook = manageHook xfceConfig <+> myManageHooks
                    , keys = myKeys
+                   , logHook = dynamicLogString myPP >>= xmonadPropLog
     	    	   }
+
+myLayout = (layoutHook defaultConfig) ||| Circle ||| Dwindle R LDw.CW (3/2) (11/10) ||| Grid
 
 myManageHooks = composeAll
 --	   [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
@@ -34,7 +41,39 @@ startup :: X()
 startup = do
 --	spawn "xmodmap -e \"remove Mod4 = Hyper_L\" -e \"add Mod3 = Hyper_L\""
 	spawn "xrdb -merge ~/.Xresources"
+        spawn "killall xfce4-panel xmobar trayer"
+        spawn "xfdesktop --quit"
+        spawn "feh --bg-scale /home/chfin/Bilder/Maraetaibeforesunrise.jpg"
+        spawn "xmobar"
+        spawn "trayer --edge top --align right --expand true --width 5 --transparent true --tint 0x333333 --alpha 0 --height 28 --monitor 1"
 --	spawn "/bin/sh -c 'ln -s -f \"$XAUTHORITY\" /home/chfin/.Xauthority'"
+
+myFg    = "#dfdfdf"
+myFgAlt = "#777"
+myPrim  = "#ffb52a"
+mySec   = "#0a81f5"
+myOk    = "#55aa55"
+myAlert = "#bd2c40"
+myBg    = "#333"
+
+myPP :: PP
+myPP = def { ppCurrent = xmobarColor myPrim ""
+           , ppVisible = xmobarColor mySec ""
+           , ppHidden  = id -- fg color
+           , ppHiddenNoWindows = xmobarColor myFgAlt ""
+           , ppUrgent  = xmobarColor myAlert ""
+           , ppTitle = shorten 40
+           , ppLayout = xmobarColor myFgAlt "" .
+                        (\ x -> case x of
+                            "Tall" -> "\xe002"
+                            "Mirror Tall" -> "\xe003"
+                            "Full" -> "\xe000"
+                            "Circle" -> "\xe026"
+                            "Grid" -> "\xe005"
+                            'D':'w':'i':_ -> "\xe007"
+                            _ -> x)
+           , ppSep = "  "
+           }
 
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
