@@ -2,11 +2,14 @@ xrandr --dpi 131
 rm -r ~/.cache/session
 
 export QT_STYLE_OVERRIDE=gtk
+export _JAVA_AWT_WM_NONREPARENTING=1
+export MOZ_USE_XINPUT2=1
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
 startxfce4&
 startxfce_pid=$!
-sleep 1
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+#sleep 0.5
 xmonad --replace &
 wait $startxfce_pid
