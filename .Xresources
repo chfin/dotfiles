@@ -2,6 +2,136 @@ URxvt.scrollstyle: plain
 URxvt.font: xft:monospace:size=9
 URxvt.letterSpace: -1
 
+!!! solarized light
+
+! #define S_base03        #002b36
+! #define S_base02        #073642
+! #define S_base01        #586e75
+! #define S_base00        #657b83
+! #define S_base0         #839496
+! #define S_base1         #93a1a1
+! #define S_base2         #eee8d5
+! #define S_base3         #fdf6e3
+
+! *background:            S_base3
+! *foreground:            S_base00
+! *fadeColor:             S_base3
+! *cursorColor:           S_base01
+! *pointerColorBackground:S_base1
+! *pointerColorForeground:S_base01
+
+! #define S_yellow        #b58900
+! #define S_orange        #cb4b16
+! #define S_red           #dc322f
+! #define S_magenta       #d33682
+! #define S_violet        #6c71c4
+! #define S_blue          #268bd2
+! #define S_cyan          #2aa198
+! #define S_green         #859900
+
+! !! black dark/light
+! *color0:                S_base02
+! *color8:                S_base03
+! !! red dark/light
+! *color1:                S_red
+! *color9:                S_orange
+! !! green dark/light
+! *color2:                S_green
+! *color10:               S_base01
+! !! yellow dark/light
+! *color3:                S_yellow
+! *color11:               S_base00
+! !! blue dark/light
+! *color4:                S_blue
+! *color12:               S_base0
+! !! magenta dark/light
+! *color5:                S_magenta
+! *color13:               S_violet
+! !! cyan dark/light
+! *color6:                S_cyan
+! *color14:               S_base1
+! !! white dark/light
+! *color7:                S_base2
+! *color15:               S_base3
+
+!!! solarized dark
+
+! #define S_base03        #002b36
+! #define S_base02        #073642
+! #define S_base01        #586e75
+! #define S_base00        #657b83
+! #define S_base0         #839496
+! #define S_base1         #93a1a1
+! #define S_base2         #eee8d5
+! #define S_base3         #fdf6e3
+
+! *background:            S_base03
+! *foreground:            S_base0
+! *fadeColor:             S_base03
+! *cursorColor:           S_base1
+! *pointerColorBackground:S_base01
+! *pointerColorForeground:S_base1
+
+! #define S_yellow        #b58900
+! #define S_orange        #cb4b16
+! #define S_red           #dc322f
+! #define S_magenta       #d33682
+! #define S_violet        #6c71c4
+! #define S_blue          #268bd2
+! #define S_cyan          #2aa198
+! #define S_green         #859900
+
+! !! black dark/light
+! *color0:                S_base02
+! *color8:                S_base03
+! !! red dark/light
+! *color1:                S_red
+! *color9:                S_orange
+! !! green dark/light
+! *color2:                S_green
+! *color10:               S_base01
+! !! yellow dark/light
+! *color3:                S_yellow
+! *color11:               S_base00
+! !! blue dark/light
+! *color4:                S_blue
+! *color12:               S_base0
+! !! magenta dark/light
+! *color5:                S_magenta
+! *color13:               S_violet
+! !! cyan dark/light
+! *color6:                S_cyan
+! *color14:               S_base1
+! !! white dark/light
+! *color7:                S_base2
+! *color15: S_base3
+
+!!! zenburn
+
+! URxvt*background: #3f3f3f
+! URxvt*foreground: #dcdccc
+! URxvt*cursorColor: #aaaaaa
+! URxvt*colorUL: #366060
+! URxvt*underlineColor: #dfaf8f
+! URxvt*color0: #3f3f3f
+! URxvt*color1: #cc9393
+! URxvt*color2: #7f9f7f
+! URxvt*color3: #d0bf8f
+! URxvt*color4: #6ca0a3
+! URxvt*color5: #dc8cc3
+! URxvt*color6: #93e0e3
+! URxvt*color7: #dcdccc
+! URxvt*color8: #000000
+! URxvt*color9: #dca3a3
+! URxvt*color10: #bfebbf
+! URxvt*color11: #f0dfaf
+! URxvt*color12: #8cd0d3
+! URxvt*color13: #dc8cc3
+! URxvt*color14: #93e0e3
+! URxvt*color15: #ffffff
+
+!!! old theme
+
 ! black
 URxvt.color0  : #000000
 URxvt.color8  : #555555
@@ -10,10 +140,10 @@ URxvt.color1  : #AA0000
 URxvt.color9  : #FF5555
 ! green
 URxvt.color2  : #00AA00
-URxvt.color10 : #55FF55
+URxvt.color10 : #55DD55
 ! yellow
 URxvt.color3  : #AA5500
-URxvt.color11 : #FFFF55
+URxvt.color11 : #CCAA33
 ! blue
 URxvt.color4  : #0000AA
 URxvt.color12 : #5555FF
@@ -24,8 +154,8 @@ URxvt.color13 : #FF55FF
 URxvt.color6  : #00AAAA
 URxvt.color14 : #55FFFF
 ! white
-URxvt.color7  : #AAAAAA
-URxvt.color15 : #FFFFFF
+URxvt.color7  : #888888
+URxvt.color15 : #BBBBBB
 
 urxvt*termName: rxvt-256color
 
@@ -34,3 +164,5 @@ Xft.RGBA      : "rgb"
 Xft.HintStyle : "hintslight"
 Xft.Antialias : 1
 !Xft.dpi       : 131
+
+! *TkTheme: clam
