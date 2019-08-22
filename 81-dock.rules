@@ -1,0 +1,4 @@
+# Save this file (after modifying ID_VENDOR and ID_MODEL if necessary) as /etc/udev/rules.d/81-thinkpad-dock.rules
+
+# These values seem to work for "ThinkPad Mini Dock Plus Series 3"
+SUBSYSTEM=="usb", ACTION=="add|remove", ENV{PRODUCT}="17ef/100f/1", RUN+="/home/chfin/.local/bin/dock.sh"
