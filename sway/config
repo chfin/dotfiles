@@ -9,10 +9,10 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod3
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+set $left n
+set $down e
+set $up i
+set $right o
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
@@ -43,11 +43,11 @@ exec xrdb -merge .Xresources
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -71,8 +71,13 @@ input * {
     xkb_layout us,de
     xkb_variant colemak,nodeadkeys
     xkb_options grp:shifts_toggle,caps:hyper
+}
+
+input "2:7:SynPS/2_Synaptics_TouchPad" {
     tap enabled
     natural_scroll disabled
+    accel_profile flat
+    pointer_accel 0.4
 }
 
 
@@ -96,7 +101,7 @@ input * {
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     # floating_modifier $mod normal
-    floating_modifier Mod4 normal
+    floating_modifier $mod normal
 
     # reload the configuration file
     # bindsym $mod+Shift+c reload
@@ -104,6 +109,9 @@ input * {
 
     # exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    bindsym $mod+l exec swaylock -f -c 000000
+
 #
 # Moving around:
 #
