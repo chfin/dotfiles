@@ -37,6 +37,7 @@ output "Dell Inc. DELL U2717D J0XYN78H715S" scale 0.67
 # autostart
 exec dex -a
 exec redshift
+exec mako
 exec xrdb -merge .Xresources
 
 ### Idle configuration
@@ -140,6 +141,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 # Workspaces:
 #
     # switch to workspace
+    bindsym $mod+a workspace back_and_forth
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
     bindsym $mod+3 workspace 3
@@ -192,7 +194,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     bindsym $mod+space focus mode_toggle
 
     # move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+p focus parent
 #
 # Scratchpad:
 #

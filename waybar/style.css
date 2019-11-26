@@ -77,8 +77,8 @@ window#waybar {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #333;
+        color: #fdfdfd;
     }
 }
 
