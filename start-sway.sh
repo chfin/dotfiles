@@ -18,4 +18,4 @@ export SSH_AUTH_SOCK
 PATH=$HOME/.local/bin:$PATH
 export PATH
 
-sway
+sway > /var/log/sway.log 2>&1
