@@ -51,7 +51,7 @@
     "clock": {
         "format": "{:%d.%m.%y - %H:%M}",
         "tooltip": false,
-        "format-alt": "{:%a %d.%m.%Y - KW %W - %T}"
+        "format-alt": "{:%a %d.%m.%Y - KW %V - %T}"
     },
 
     "battery": {

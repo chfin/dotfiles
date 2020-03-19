@@ -1,0 +1,4 @@
+! option = symbols
+  myper:myper = +myper(myper)
+
+! include %S/evdev

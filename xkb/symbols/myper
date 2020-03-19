@@ -1,0 +1,6 @@
+hidden partial modifier_keys
+xkb_symbols "myper" {
+    key <CAPS> { [ Hyper_L, Hyper_L, Hyper_L, Hyper_L ] };
+    key <RWIN> { [ Hyper_L, Hyper_L, Hyper_L, Hyper_L ] };
+    modifier_map Mod3 { Hyper_L, <CAPS>, <RWIN> };
+};
