@@ -95,6 +95,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec
 #
     # start a terminal
     bindsym $mod+Shift+Return exec $term
+    bindsym $mod+Return exec $term
 
     # kill focused window
     bindsym $mod+Shift+z kill
@@ -102,7 +103,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec
     # start your launcher
     bindsym $mod+d exec $menu
     bindsym Mod4+Space exec synapse
-
+    
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -249,6 +250,8 @@ bindsym XF86AudioMute        exec $volume mute
 bindsym XF86AudioLowerVolume exec $volume down
 bindsym XF86AudioRaiseVolume exec $volume up
 bindsym XF86AudioMicMute     exec $volume mute-input
+
+bindsym Print exec grim -g "$(slurp)" "/home/chfin/Bilder/screenshots/screen_$(date +%F_%T).jpg"
 
 # appearance
 ############
