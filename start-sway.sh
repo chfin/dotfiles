@@ -2,8 +2,8 @@
 
 export QT_STYLE_OVERRIDE=gtk
 export QT_QPA_PLATFORM=wayland-egl
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_SCALE_FACTOR=1.5
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+#export QT_SCALE_FACTOR=1.5
 export CLUTTER_BACKEND=wayland
 #export GDK_DPI_SCALE=1.5
 export MOZ_USE_XINPUT2=1
