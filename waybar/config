@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "network", "battery", "tray"],
+    "modules-right": ["pulseaudio", "idle_inhibitor", "network", "battery", "tray"],
 
     // Modules configuration
 
