@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export XDG_CURRENT_DESKTOP=sway
 export QT_STYLE_OVERRIDE=gtk
 export QT_QPA_PLATFORM=wayland-egl
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
@@ -14,6 +15,8 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 . $HOME/.nix-profile/etc/profile.d/nix.sh
+
+export JULIA_PKG_SERVER=pkg.julialang.org
 
 PATH=$HOME/.local/bin:$PATH
 export PATH
