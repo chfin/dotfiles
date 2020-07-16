@@ -251,7 +251,7 @@ bindsym XF86AudioLowerVolume exec $volume down
 bindsym XF86AudioRaiseVolume exec $volume up
 bindsym XF86AudioMicMute     exec $volume mute-input
 
-bindsym Print exec grim -g "$(slurp)" "/home/chfin/Bilder/screenshots/screen_$(date +%F_%T).jpg"
+bindsym Print exec grim -t jpeg -g "$(slurp)" "/home/chfin/Bilder/screenshots/screen_$(date +%F_%T).jpg"
 
 # appearance
 ############
