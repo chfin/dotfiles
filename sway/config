@@ -21,8 +21,9 @@ output "Dell Inc. DELL U2717D J0XYN78H715S" scale 0.67
 #output "Philips Consumer Electronics Company PHL 288P6L 0x00000058" position 2560,0
 
 #closed lid mode
-#bindswitch --reload lid:on output $laptop disable
-#bindswitch --reload lid:off output $laptop enable
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+exec_always ~/.config/sway/check_lid.sh
 
 # autostart
 exec dex -a
