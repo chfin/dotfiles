@@ -27,11 +27,12 @@ exec_always ~/.config/sway/check_lid.sh
 
 # autostart
 exec dex -a
-exec redshift
+exec wlsunset -l 46.52 -L 6.63
 exec mako
 exec xrdb -merge .Xresources
 exec gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
 exec libinput-gestures-setup start
+exec autotiling
 
 ### Idle configuration
 #
