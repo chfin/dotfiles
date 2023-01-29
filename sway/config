@@ -32,7 +32,7 @@ exec mako
 exec xrdb -merge .Xresources
 exec gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
 exec libinput-gestures-setup start
-exec autotiling
+exec autotiling -l 2
 
 ### Idle configuration
 #
