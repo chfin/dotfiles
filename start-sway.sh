@@ -2,7 +2,7 @@
 
 export XDG_CURRENT_DESKTOP=sway
 export QT_STYLE_OVERRIDE=gtk
-export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORM=wayland
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_FONT_DPI=144
 #export QT_SCALE_FACTOR=1.5
