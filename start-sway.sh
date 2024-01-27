@@ -24,4 +24,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # PATH=$HOME/.ghcup/bin:$PATH
 # export PATH
 
+mkdir -p ~/.local/var/log
 sway > ~/.local/var/log/sway.log 2>&1
