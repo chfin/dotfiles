@@ -1,8 +1,8 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 44, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "height": 40, // Waybar height (to be removed for auto height)
+    // "width": 1920, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],

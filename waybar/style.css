@@ -2,9 +2,9 @@
     border: none;
     border-radius: 0;
     font-family: "Font Awesome 5 Free", Liberation Sans, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    min-height: 44px;
+    min-height: 40px;
 }
 
 window#waybar {

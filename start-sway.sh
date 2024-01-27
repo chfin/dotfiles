@@ -3,8 +3,8 @@
 export XDG_CURRENT_DESKTOP=sway
 export QT_STYLE_OVERRIDE=gtk
 export QT_QPA_PLATFORM=wayland
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_FONT_DPI=144
+#export QT_AUTO_SCREEN_SCALE_FACTOR=0
+#export QT_FONT_DPI=144
 #export QT_SCALE_FACTOR=1.5
 export CLUTTER_BACKEND=wayland
 #export GDK_DPI_SCALE=1.5
@@ -24,4 +24,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # PATH=$HOME/.ghcup/bin:$PATH
 # export PATH
 
-sway > /var/log/sway.log 2>&1
+sway > ~/.local/var/log/sway.log 2>&1

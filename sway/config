@@ -18,7 +18,8 @@ output * bg /home/chfin/Bilder/Maraetaibeforesunrise.jpg fill
 set $laptop eDP-1
 output $laptop position 0,0 scale 1
 output "Dell Inc. DELL U2717D J0XYN78H715S" scale 0.67
-#output "Philips Consumer Electronics Company PHL 288P6L 0x00000058" position 2560,0
+output "AOC 24P2W1DG5 VOVP6HA000214" scale 0.8
+output "Philips Consumer Electronics Company PHL 288P6L 0x00000058" scale 1.5
 
 #closed lid mode
 bindswitch --reload --locked lid:on output $laptop disable
@@ -30,9 +31,17 @@ exec dex -a
 exec wlsunset -l 46.52 -L 6.63
 exec mako
 exec xrdb -merge .Xresources
-exec gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
-exec libinput-gestures-setup start
-exec autotiling -l 2
+#exec gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
+#exec libinput-gestures-setup start
+exec autotiling-rs
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# gtk4 settings
+exec_always {
+  gsettings set org.gnome.desktop.interface font-name "Liberation Sans 10"
+  gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+  gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+}
 
 ### Idle configuration
 #
@@ -247,11 +256,17 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp   exec brightnessctl s +10%
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
-set $volume amixer
-bindsym XF86AudioMute        exec $volume set Master toggle
-bindsym XF86AudioLowerVolume exec $volume set Master 5%-
-bindsym XF86AudioRaiseVolume exec $volume set Master 5%+
-bindsym XF86AudioMicMute     exec $volume set Capture toggle
+set $volume pamixer
+bindsym XF86AudioMute        exec $volume -t
+bindsym XF86AudioLowerVolume exec $volume -d 5
+bindsym XF86AudioRaiseVolume exec $volume -i 5
+bindsym XF86AudioMicMute     exec $volume --default-source -t
+
+# set $volume amixer
+# bindsym XF86AudioMute        exec $volume set Master toggle
+# bindsym XF86AudioLowerVolume exec $volume set Master 5%-
+# bindsym XF86AudioRaiseVolume exec $volume set Master 5%+
+# bindsym XF86AudioMicMute     exec $volume set Capture toggle
 
 bindsym Print exec grim -t jpeg -g "$(slurp)" "/home/chfin/Bilder/screenshots/screen_$(date +%F_%T).jpg"
 
